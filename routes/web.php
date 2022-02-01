@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
+}); */
+
+//Ruta con redirección a login
+Route::get('adm-storeproject', [StoreController::class, 'login']);
+
+//Ruta proceso login, recordar que debe ser método post
+Route::post('login', [StoreController::class, 'loginProc']);
+
+//Ruta vista administración de recursos
+Route::get('adm-home', [StoreController::class, 'indexAdm']);
+
+//Ruta con redirección a home
+Route::get('home', [StoreController::class, 'index']);
+
+//Ruta detalle compra, nos redirecciona a los detalles del producto, recogiendo el Id del mismo
+Route::get('detalle-compra/{id}', function($id){
+    return "Compra del producto ".$id;
 });

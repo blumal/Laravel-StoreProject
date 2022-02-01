@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container-left {
+    width: 20%;
+    height: 2115px;
+    background-color: #eeeeee;
+    float: left;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.container-right {
+    background-color: #fcfcfc;
+    width: 80%;
+    height: auto;
+    float: right;
+    margin-top: 10px;
+    /*Si el div crece hacia abajo, se generará solo height auto*/
+}
+
+.products-style {
+    width: 20%;
+    height: 450px;
+    background-color: pink;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.products-style img {
+    margin-top: 30px;
+}
