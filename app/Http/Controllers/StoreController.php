@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
+use Illuminate\Cache\Console\ForgetCommand;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,6 +44,15 @@ class StoreController extends Controller
         } catch (\Throwable $e) {
             return $e->getMessage();
         }
+    }
+
+    //Método destrucción de sesión
+    public function logout(Request $request){
+        //Olvidamos la session
+        $request->session()->forget('email_session');
+        //Limpiamos todos los registros
+        $request->session()->flush();
+        return redirect('adm-storeproject');
     }
 
     //Método encargado de devolver la vista de home pero para los adms

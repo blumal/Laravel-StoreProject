@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
+//--------------------------Gestión ADM----------------------------------
 //Ruta con redirección a login
 Route::get('adm-storeproject', [StoreController::class, 'login']);
 
@@ -27,8 +28,12 @@ Route::post('login', [StoreController::class, 'loginProc']);
 //Ruta vista administración de recursos
 Route::get('adm-home', [StoreController::class, 'indexAdm']);
 
-//Ruta con redirección a home
-Route::get('home', [StoreController::class, 'index']);
+//Ruta al proceso de destrucción de sesión
+Route::get('logout', [StoreController::class, 'logout']);
+
+//-----------------------------Cliente-----------------------------------
+//Ruta con redirección al home de la página
+Route::get('/', [StoreController::class, 'index']);
 
 //Ruta detalle compra, nos redirecciona a los detalles del producto, recogiendo el Id del mismo
 Route::get('detalle-compra/{id}', function($id){

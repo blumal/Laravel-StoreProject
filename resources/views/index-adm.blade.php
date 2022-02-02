@@ -1,6 +1,6 @@
 @if (!Session::get('email_session'))
     <?php
-        //Si la session no esta definida te redirige al login.
+        //Si la session no esta definida te redirige al login, la session se crea en el método.
         return redirect()->to('adm-storeproject')->send();
     ?>
 @endif
@@ -58,6 +58,10 @@
         <form action="" method="get">
             <input type="submit" value="New item" >
         </form><br/>
+        {{-- Botón con redirección al la ruta logout --}}
+        <form action="{{url('logout')}}" method="GET">
+            <button id="logout" class= "botonCre" type="submit" name="logout">Logout</button>
+        </form>
     </center>
 </body>
 </html>

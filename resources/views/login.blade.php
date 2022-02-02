@@ -21,7 +21,7 @@
                     <p class="text-white-50 mb-5">Please enter your adm-login and password!</p>
       
                     <div class="form-outline form-white mb-4">
-                        <form action="{{url("/login")}}" method="post">
+                        <form action="{{url("login")}}" method="post">
                             @csrf
                             <label class="form-label" for="typeEmailX">Email</label>
                             <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email_us" placeholder="example@domain.net"/>
